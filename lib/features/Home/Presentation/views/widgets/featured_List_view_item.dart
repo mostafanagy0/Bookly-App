@@ -9,8 +9,6 @@ class FeaturedListViewItem extends StatelessWidget {
       // 2.7 / 4  =>  2.7 : 4
       aspectRatio: 2.7 / 4,
       child: Container(
-        height: MediaQuery.of(context).size.height * .25,
-        width: 100,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             color: Colors.red,
