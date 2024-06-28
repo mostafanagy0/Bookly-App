@@ -5,8 +5,8 @@ import 'package:equatable/equatable.dart';
 
 part 'feetured_books_state.dart';
 
-class FeeturedBooksCubit extends Cubit<FeeturedBooksState> {
-  FeeturedBooksCubit(this.homeRepo) : super(FeeturedBooksInitial());
+class FeaturedBooksCubit extends Cubit<FeeturedBooksState> {
+  FeaturedBooksCubit(this.homeRepo) : super(FeeturedBooksInitial());
   final HomeRepo homeRepo;
   Future<void> fetchFeatureBooks() async {
     var result = await homeRepo.fetchFeatureBooks();
