@@ -4,6 +4,8 @@ import 'package:bookly_app/features/Home/Presentation/views/Home_view.dart';
 import 'package:bookly_app/features/Home/Presentation/views/book_details.dart';
 import 'package:bookly_app/features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/features/Home/data/repos/Home_Repo_Implemntion.dart';
+import 'package:bookly_app/features/shearch/data/repo/search_repo_impl.dart';
+import 'package:bookly_app/features/shearch/presentation/maneger/Search_Book_cubit/search_cubit.dart';
 import 'package:bookly_app/features/shearch/presentation/views/Search_View.dart';
 import 'package:bookly_app/features/splash/presentation/views/splash_view.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -21,7 +23,10 @@ abstract class AppRouter {
       ),
       GoRoute(
         path: kSearchView,
-        builder: (context, state) => const SearchView(),
+        builder: (context, state) => BlocProvider(
+          create: (context) => SearchCubit(getIt.get<SearchRepoImpl>()),
+          child: const SearchView(),
+        ),
       ),
       GoRoute(
         path: kHomeView,
